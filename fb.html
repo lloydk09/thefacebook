@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <style>
+        .body{
+          padding-right: 0px;
+        }
+        .header-all{
+            display: flex;
+            position: fixed;
+      
+        }
+        .search-btn{
+          width: 30px;
+          height: 30px;
+        }
+        .logo{
+            color: rgb(50, 50, 219);
+            font-size: 40px;
+            display: inline-block;
+            vertical-align: middle;
+            font-weight: bold;
+            margin-right: 350px;
+        }
+        .fb-logo{
+          margin-top: -40px;
+          
+        }
+        .search-btn{
+          border: none;
+          border-radius: 20px;
+          height: 40px;
+          width: 40px;
+          color: black;
+        }
+        .menu-btn{
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          margin-left: 4px;
+        }
+        .icons-all{
+          margin-top: -10px;
+          color: rgb(50, 50, 219);
+        }
+        .group{
+          display: inline-block;
+          margin-left: 50px;
+        
+        }
+        .message{
+          display: inline-block;
+          margin-left: 50px;
+        }
+        .notification{
+          display: inline-block;
+          margin-left: 50px;
+        }
+        .video{
+          display: inline-block;
+          margin-left: 50px;
+        }
+        .profile{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .profile-p{
+          width: 64px;
+          height: 65px;
+          border-radius: 75px;
+        }
+        .pp{
+          position: relative;
+        }
+        .active{
+          position: absolute;
+          top: 30px;
+          right: -7px;
+          background-color: rgb(69, 223, 69);
+          height: 24px;
+          width: 25px;
+          border-radius: 14px;
+        }
+        .inp{
+          
+          width: 600px;
+          margin-left: 20px;
+          margin-right: 20px;
+          height: 50px;
+          border-radius: 25px;
+          
+          border: none;
+          background-color: rgb(247, 247, 247);
+        }
+        .inp::placeholder{
+          padding-left: 20px;
+        }
+        .photo-icon{
+          color: rgb(43, 201, 43);
+          margin-right: 950px;
+        }
+        .right{
+          display: inline-block;
+          margin-left: 200px;
+        }
+        .story-p{
+        position: relative;
+        border-width: 1px;
+        border-color: rgb(75, 72, 72);
+        border-style: solid;
+        width: 160px;
+        height: 280px;
+        border-radius: 20px;
+        }
+        .sp{
+          width: 100%;
+          display: grid;
+          grid-template-columns: 120px 120px;
+          height: 170px;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+        }
+        .story-add{
+          position: absolute;
+          top: 150px;
+          left: 60px;
+          
+        }
+        .story-txt{
+          font-size: 18px;
+          text-align: center;
+          position: absolute;
+          width: 100px;
+          left: -27px;
+        }
+       .story-container{
+        width: 1000px;
+        
+       }
+       .story-grid{
+        display: grid;
+        grid-template-columns: 170px 170px 170px 170px 170px ;
+       } 
+       .post-left{
+        width: 200px;
+        display: inline-block;
+        position: relative;
+       }
+       .post-profile-img1{
+        height: 50px;
+        
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 90px;
+        border-color: gray;
+        vertical-align: bottom;
+        
+       }
+       .post-user{
+        display: inline-block;
+        font-size: 17px;
+        font-weight: bold;
+       }
+       .post-time{
+        position: absolute;
+        top: 20px;
+        display: inline-block;
+        margin-left: -1px;
+        left: 60px;
+        color: grey;
+       }
+       .post-right{
+        display: flex;
+        align-items: center;
+       }
+       .opt-btn{
+        display: inline-block;
+        border: none;
+        background-color: white;
+        color: gray;
+        
+       }
+       .close-btn{
+        border: none;
+        background-color: white;
+        color: gray;
+       }
+       .post-container{
+        display: flex;
+        justify-content: space-between;
+       }
+       .map{
+        position: absolute;
+        bottom: 6px;
+        left: 80px;
+        border: none;
+        background-color: white;
+       }
+       .main-post{
+        display: block;
+       }
+       .caption{
+        display: block;
+       }
+       .posted{
+        width: 1500px;  
+        height: 800px;  
+       }
+       .status{
+        margin-left: 10px;
+        
+       }
+       .angry{
+        margin-left: -5px;
+       }
+       .love{
+        margin-left: -5px;
+       }
+       .likers{
+        display: inline-block;
+        font-size: 30px;
+        color: rgb(36, 34, 34);
+       }
+      .like{
+        border: none;
+        width: 300px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: rgb(212, 212, 212);
+        margin-left: 10px;
+        font-size: 15px;
+        
+      }
+      .num-s{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgb(50, 50, 219);
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+        text-align: center;
+        margin-left: 10px;
+        margin-top: 6px;
+      }
+      .story-name{
+        position: absolute;
+        bottom: 3px;
+        left: 10px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      @media (max-width:600px){
+        .posted{
+          width: 600px;
+          height: 600px;
+          
+        }
+        .like{
+          width: 200px;
+          margin-bottom: 12px;
+        }
+        .right{
+          position: absolute;
+          top: 0;
+          right: 0;
+
+        }
+        .body{
+          padding-right: 0px;
+        }
+       
+      }
+      
+      </style>
+    </head>
+    <body class="body">
+        <div class="header all">
+
+             <div class="fb-logo">
+               <p class="logo">facebook</p>
+               <div class="right">
+                <button class="search-btn">
+                  <i class="fa fa-magnifying-glass"></i>
+                 </button>
+                <button class="menu-btn">
+                  <i class="fa-solid fa-bars"></i>
+                </button>
+               </div>
+              
+             </div>
+
+           <div class="icons-all">
+           
+              <i class="fa-solid fa-house fa-2x"> </i>
+
+           <div class="group">
+            <i class="fa fa-user-group fa-2x"></i>
+           </div>
+           <div class="message">
+             <i class="fa-brands fa-facebook-messenger fa-2x" ></i>
+           </div>  
+           <div class="notification">
+             <i class="fa-solid fa-bell fa-2x"></i>
+           </div>
+           <div class="video">
+            <i class="fa-solid fa-tv fa-2x"></i>
+           </div>
+           <hr>
+           </div>
+          <!--this is for the profile -->
+            <div class="profile">
+              <div class="pp">
+                <img class="profile-p" src="icons/469479845_576624851971229_8345957857374355974_n.jpg">
+                <div class="active"></div>
+              </div>
+             <div class="inp-container">
+              <input class="inp" type="text" placeholder="what is on your mind?">
+             </div>
+                
+      
+                <div class="photo-icon">
+                  <i class="fa-solid fa-image fa-2x"></i>
+              </div>
+
+            </div><hr>
+          <!---this is for the story-->
+          <div class="story-container">
+             <div class="story-grid">
+              <div class="story-p">
+                <img class="sp" src="icons/469479845_576624851971229_8345957857374355974_n.jpg">
+                <div class="story-add">
+                 <button class="search-btn" style="background-color: rgb(50, 50, 218); color: white;">
+                   <i class="fa fa-add" ></i>
+                  </button>
+                  <div class="story-txt">Creat New story</div>
+                </div>
+               </div>
+   
+               <div class="story-p">
+                 <img class="sp" src="icons/472090881_1228143822446440_2890970942949155014_n.jpg" style="height: 281px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+                 
+                <div class="num-s">1</div>
+                <div class="story-name">Real Madrid</div>
+                 </div>
+               
+              
+                 <div class="story-p">
+                  <img class="sp" src="icons/347110386_993663875383747_583934797072922306_n.jpg" style="height: 281px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"
+                  >
+                  <div class="num-s">2</div>
+                  <div class="story-name">Fabrizo Romano</div>
+                  </div>
+
+                  <div class="story-p">
+                    <img class="sp" src="icons/469479845_576624851971229_8345957857374355974_n.jpg" style="height: 281px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+                    <div class="num-s">3</div>
+                    <div class="story-name">Lloyd kabanda </div>
+                    </div>
+
+                    <div class="story-p">
+                      <img class="sp" src="icons/318531073_743494013799995_4013235654997854194_n.jpg" style="height: 281px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+                      <div class="num-s">2</div>
+                      <div class="story-name">Hakainde </div>
+                      </div>
+
+
+                      
+                   
+             </div>
+
+        
+            <div>
+
+            </div>
+          </div>
+        </div><hr>
+
+        <!---this is for tha posts1-->
+        <div class="post-container">
+           <div class="post-left">
+             <img class="post-profile-img1" src="icons/367390922_868365434649987_8573319835075347593_n.jpg">
+             <h4 class="post-user">Manchester United</h4>
+             <h5 class="post-time">4h</h5>
+             <button class="map" >
+              <i class="fa-solid fa-earth-americas"></i>
+             </button>
+             
+           </div>
+
+           <div class="post-right">
+             <button class="opt-btn">
+              <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+             </button>
+
+             <button class="close-btn">
+              <i class="fa fa-times" aria-hidden="true"></i>
+             </button>
+             
+           </div>
+          
+
+        </div>
+         
+           <!--these are the main posts1-->
+           <div class="main-posts">
+            <h4 class="caption">Full-Time.</h4>
+            <img class="posted" src="icons/471918891_1180846906735170_5601192006418570710_n.jpg">
+            <div class="status">
+              <img class="thumbs" src="icons/An-HX414PnqCVzyEq9OFFdayyrdj8c3jnyPbPcierija6hpzsUvw-1VPQ260B2M9EbxgmP7pYlNQSjYAXF782_vnvvpDLxvJQD74bwdWEJ0DhcErkDga6gazZZUYm_Q.png">
+              <img class="angry" src="icons/An-POmkU-_NNTTsdRMlBuMNo0AY4ErdT38vLDNtGKtUSrILEfybR2XqG2yRrfGfN1vBl3SAsfomCLcWikp72R2ay__g5C5Ufwb-77V2qflOKGqve2111p7Pu_qihMMCw.png">
+              <img class="love" src="icons/An8VnwvdkGMXIQcr4C62IqyP-g1O5--yQu9PnL-k4yvIbj8yTSE32ea4ORp0OwFNGEWJbb86MHBaLY-SMvUKdUYJnNFcexEoUGoVzcVd50SaAIzBE-K5dxR8Y-MJn5E.png">
+              <div class="likers">lloyd kabanda and 50K others</div>
+          
+            </div>
+
+            
+             <button class="like">
+              <i class="fa-solid fa-thumbs-up fa-2x">
+                78K
+              </i>
+            </button>
+            <button class="like">
+              <i class="fa-regular fa-comment fa-2x">
+                24K
+              </i>
+            </button>
+            <button class="like">
+              <i class="fa fa-light fa-share fa-2x">
+                20K
+              </i>
+            </button>
+
+              <!---this is for tha posts2-->
+        <div class="post-container">
+          <div class="post-left">
+            <img class="post-profile-img1" src="icons/351196722_2401743193333639_5070533686922392871_n.png">
+            <h4 class="post-user">MrBeast</h4>
+            <h5 class="post-time">5h</h5>
+            <button class="map" >
+             <i class="fa-solid fa-earth-americas"></i>
+            </button>
+            
+          </div>
+
+          <div class="post-right">
+            <button class="opt-btn">
+             <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            </button>
+
+            <button class="close-btn">
+             <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+            
+          </div>
+         
+
+       </div>
+        
+          <!--these are the main posts-->
+          <div class="main-posts">
+           <h4 class="caption">happy merry christmas</h4>
+           <img class="posted" src="icons/471320645_1147747160053553_952692837901359505_n.jpg">
+           <div class="status">
+             <img class="thumbs" src="icons/An-HX414PnqCVzyEq9OFFdayyrdj8c3jnyPbPcierija6hpzsUvw-1VPQ260B2M9EbxgmP7pYlNQSjYAXF782_vnvvpDLxvJQD74bwdWEJ0DhcErkDga6gazZZUYm_Q.png">
+             <img class="angry" src="icons/An-POmkU-_NNTTsdRMlBuMNo0AY4ErdT38vLDNtGKtUSrILEfybR2XqG2yRrfGfN1vBl3SAsfomCLcWikp72R2ay__g5C5Ufwb-77V2qflOKGqve2111p7Pu_qihMMCw.png">
+             <img class="love" src="icons/An8VnwvdkGMXIQcr4C62IqyP-g1O5--yQu9PnL-k4yvIbj8yTSE32ea4ORp0OwFNGEWJbb86MHBaLY-SMvUKdUYJnNFcexEoUGoVzcVd50SaAIzBE-K5dxR8Y-MJn5E.png">
+             <div class="likers">lloyd kabanda and 1.7M others</div>
+         
+           </div>
+
+           
+            <button class="like">
+             <i class="fa-solid fa-thumbs-up fa-2x">
+               1.7M
+             </i>
+           </button>
+           <button class="like">
+             <i class="fa-regular fa-comment fa-2x">
+               14K
+             </i>
+           </button>
+           <button class="like">
+             <i class="fa fa-light fa-share fa-2x">
+               10K
+             </i>
+           </button>
+            
+              <!---this is for tha posts3-->
+        <div class="post-container">
+          <div class="post-left">
+            <img class="post-profile-img1" src="icons/318531073_743494013799995_4013235654997854194_n.jpg">
+            <h4 class="post-user">HH</h4>
+            <h5 class="post-time">10h</h5>
+            <button class="map" >
+             <i class="fa-solid fa-earth-americas"></i>
+            </button>
+            
+          </div>
+
+          <div class="post-right">
+            <button class="opt-btn">
+             <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            </button>
+
+            <button class="close-btn">
+             <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+            
+          </div>
+         
+
+       </div>
+        
+          <!--these are the main posts-->
+          <div class="main-posts">
+           <h4 class="caption">bally❤️</h4>
+           <img class="posted" src="icons/472006895_1193515388797853_4965721160811612543_n.jpg">
+           <div class="status">
+             <img class="thumbs" src="icons/An-HX414PnqCVzyEq9OFFdayyrdj8c3jnyPbPcierija6hpzsUvw-1VPQ260B2M9EbxgmP7pYlNQSjYAXF782_vnvvpDLxvJQD74bwdWEJ0DhcErkDga6gazZZUYm_Q.png">
+             <img class="angry" src="icons/An-POmkU-_NNTTsdRMlBuMNo0AY4ErdT38vLDNtGKtUSrILEfybR2XqG2yRrfGfN1vBl3SAsfomCLcWikp72R2ay__g5C5Ufwb-77V2qflOKGqve2111p7Pu_qihMMCw.png">
+             <img class="love" src="icons/An8VnwvdkGMXIQcr4C62IqyP-g1O5--yQu9PnL-k4yvIbj8yTSE32ea4ORp0OwFNGEWJbb86MHBaLY-SMvUKdUYJnNFcexEoUGoVzcVd50SaAIzBE-K5dxR8Y-MJn5E.png">
+             <div class="likers">60K</div>
+         
+           </div>
+
+           
+            <button class="like">
+             <i class="fa-solid fa-thumbs-up fa-2x">
+               60K
+             </i>
+           </button>
+           <button class="like">
+             <i class="fa-regular fa-comment fa-2x">
+               14K
+             </i>
+           </button>
+           <button class="like">
+             <i class="fa fa-light fa-share fa-2x">
+               27K
+             </i>
+           </button>
+            
+                <!---this is for tha posts-->
+        <div class="post-container">
+          <div class="post-left">
+            <img class="post-profile-img1" src="icons/341141367_622079976015728_7509847856102938120_n.jpg">
+            <h4 class="post-user">Mobile city</h4>
+            <h5 class="post-time">15h</h5>
+            <button class="map" >
+             <i class="fa-solid fa-earth-americas"></i>
+            </button>
+            
+          </div>
+
+          <div class="post-right">
+            <button class="opt-btn">
+             <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            </button>
+
+            <button class="close-btn">
+             <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+            
+          </div>
+         
+
+       </div>
+        
+          <!--these are the main posts-->
+          <div class="main-posts">
+           <h4 class="caption">Get your new phone on christmas </h4>
+           <img class="posted" src="icons/471982434_907178144964519_8107177002532829535_n.jpg">
+           <div class="status">
+             <img class="thumbs" src="icons/An-HX414PnqCVzyEq9OFFdayyrdj8c3jnyPbPcierija6hpzsUvw-1VPQ260B2M9EbxgmP7pYlNQSjYAXF782_vnvvpDLxvJQD74bwdWEJ0DhcErkDga6gazZZUYm_Q.png">
+             <img class="angry" src="icons/An-POmkU-_NNTTsdRMlBuMNo0AY4ErdT38vLDNtGKtUSrILEfybR2XqG2yRrfGfN1vBl3SAsfomCLcWikp72R2ay__g5C5Ufwb-77V2qflOKGqve2111p7Pu_qihMMCw.png">
+             <img class="love" src="icons/An8VnwvdkGMXIQcr4C62IqyP-g1O5--yQu9PnL-k4yvIbj8yTSE32ea4ORp0OwFNGEWJbb86MHBaLY-SMvUKdUYJnNFcexEoUGoVzcVd50SaAIzBE-K5dxR8Y-MJn5E.png">
+             <div class="likers"> 59K </div>
+         
+           </div>
+
+           
+            <button class="like">
+             <i class="fa-solid fa-thumbs-up fa-2x">
+               59K
+             </i>
+           </button>
+           <button class="like">
+             <i class="fa-regular fa-comment fa-2x">
+               14K
+             </i>
+           </button>
+           <button class="like">
+             <i class="fa fa-light fa-share fa-2x">
+               2K
+             </i>
+           </button>
+
+          </div>
+    </body>
+</html>
